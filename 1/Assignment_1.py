@@ -1,3 +1,9 @@
+def ez2look():
+    for a, b in inventory.items():
+        print(a," : ", b)
+    for a in range(60):
+        print("-", end="")
+    print("")
 
 inventory = {
     'gold' : 500,
@@ -7,21 +13,13 @@ inventory = {
 #making new dictionary and adding the new dictionary to the inventory dictionary
 inventory1 = {'pocket':['seashell','strange berry','lint']}
 inventory.update(inventory1)
-
-#print
-for a, b in inventory.items():
-    print(a," : ", b)
-
-#just a border between prints
-for a in range(60):
-    print("-", end="")
-print("")
-
-#returning backpack value and sorting the value
-sorter = (inventory.get(("backpack")))
-sorter.sort()
-
-#print
-for a, b in inventory.items():
-    print(a," : ", b)
-
+ez2look()
+#returning values of keys
+backpackitem = (inventory.get("backpack"))
+#sort, remove, and add value
+backpackitem.sort()
+ez2look()
+backpackitem.remove("dagger")
+ez2look()
+inventory["gold"] += 50
+ez2look()
