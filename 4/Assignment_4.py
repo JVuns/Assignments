@@ -19,12 +19,15 @@ armin = {
 }
 
 students = [eren, mikasa, armin]
-def comprint(student):
+def comprint(students):
   for student in students:
-    print("name", student["name"])
-    print("homework :", student["homework"])
-    print("quizzes :", student["quizzes"])
-    print("tests :", student["tests"])
+        for a, b in student.items():
+              print(a,": ",b)         
+    # print("name", student["name"])
+    # print("homework :", student["homework"])
+    # print("quizzes :", student["quizzes"])
+    # print("tests :", student["tests"])
+    # print()
 comprint(students)
 def average(numbers):
   # print(numbers)
@@ -40,7 +43,7 @@ def get_average(student):
   tests = average(student["tests"])
   homework *= 0.1
   quizzes *= 0.3
-  tests *= 0.4
+  tests *= 0.6
   avgtotal = homework + quizzes + tests
   return avgtotal
 def get_letter_grade(score):
@@ -60,15 +63,9 @@ def get_letter_grade(score):
 def get_class_average(students):
     results = []
     for student in students:
-        results.append(get_average(student))
+        results.append(get_average(student)) 
     return average(results)
 
 print (get_class_average(students))
 print (get_letter_grade(get_class_average(students)))
-
-
-
-
-      
-      
-
+# print(get_average(eren))
