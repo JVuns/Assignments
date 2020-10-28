@@ -21,16 +21,16 @@ with open("assingment9.txt", mode="r", encoding="utf8") as rfile, open("assingme
         for word in wordlist:
             if word not in realdot:
                 notdotword = (word + " ")
-                script.append(notdotword)
+                wfile.write(notdotword)
             else:
                 dotword = (word + "\n")
-                script.append(dotword)
+                wfile.write(dotword)
                 
         
 
-cavemanfilter()
-newline()
-print(script)
+    cavemanfilter()
+    newline()
+    
 
                 
             
