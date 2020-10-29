@@ -25,9 +25,6 @@ with open("assingment9.txt", mode="r", encoding="utf8") as rfile, open("assingme
             else:
                 dotword = (word + "\n")
                 wfile.write(dotword)
-                
-        
-
     cavemanfilter()
     newline()
     
