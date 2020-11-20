@@ -1,6 +1,2 @@
-word = "aw.da.c.om"
-website = ".com"
-
-    print("yes")
-else:
-    print("no")
+print(dir(locals()['__builtins__']))
+sys.exc_info()
