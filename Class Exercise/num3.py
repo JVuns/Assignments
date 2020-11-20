@@ -59,6 +59,3 @@ class Teacher(Person):
 
     def __str__(self):
         return(f"Name:  + {self.getName()}\nAddress: {self.getAddress()}")
-
-Lucca = Person("Lucca","Batako")
-print(Lucca)
