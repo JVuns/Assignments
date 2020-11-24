@@ -8,25 +8,25 @@ for pokemon in listmaker:
         pokemondict[pokemon[0]] = [pokemon]
     else:
         pokemondict[pokemon[0]].append(pokemon)
-# print(pokemondict)
-length = 0
-longest = []
+print(pokemondict)
+# length = 0
+# longest = []
 
-def braincell(currentchain):
-    global length
-    global longest
+# def braincell(currentchain):
+#     global length
+#     global longest
 
-    if len(currentchain) > length:
-        length = len(currentchain)
-        longest = currentchain
-        # print(longest)
-    if currentchain[-1][-1] in pokemondict:
-        for name in pokemondict[currentchain[-1][-1]]:
-            if name not in currentchain: 
-                braincell(currentchain + [name])
+#     if len(currentchain) > length:
+#         length = len(currentchain)
+#         longest = currentchain
+#         # print(longest)
+#     if currentchain[-1][-1] in pokemondict:
+#         for name in pokemondict[currentchain[-1][-1]]:
+#             if name not in currentchain: 
+#                 braincell(currentchain + [name])
             
-for names in listmaker:
-    braincell([names])
+# for names in listmaker:
+#     braincell([names])
 
-# Print all the stuff
-print(longest)
+# # Print all the stuff
+# print(longest)
