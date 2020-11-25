@@ -3,6 +3,8 @@ class Author():
         self.__name = auAuthor
         self.__email = email
         self.__gender = gender
+        if self.__gender not in ['M', 'F']:
+            raise ValueError(gender)
 
     def getName(self):
         return self.__name
@@ -20,27 +22,37 @@ class Author():
         return(f"Author[name{self.__name},email={self.__email},gender={self.__gender}]")
     
 class Book(Author):
-    def __init__(self, aBook, price, auAuthor, email, gender, qty=0, author=[]):
+    def __init__(self, aBook, price, qty=0, author=[] ):
         self.__name = aBook
         self.__price = price
-        self.__obj_Author = Author(auAuthor, email, gender)
         self.__qty = qty
-        self.__author = author
+        self.__author = Author
+
     def getName(self):
         return self.__name
+
     def getAuthor(self):
         return self.__author
+
     def getPrice(self):
         return self.__price
+
     def setPrice(self, price):
         self.__price = price
+
     def getQty(self):
         return self.__qty
+
     def setQty(self, qty):
         self.__qty = qty
+
     def __str__(self,):
-        return(f"Book[name={self.__name},Author[name={self.__obj_Author.getName()},email={self.__obj_Author.getEmail()},gender={self.__obj_Author.getGender()}],price={self.getPrice()},qty={self.getQty()}]")
+        return(f"Book[name={self.__name},Author[{self.getAuthorNames()}],price={self.getPrice()},qty={self.getQty()}]")
     def getAuthorNames(self):
-        return self.__author
-TestBook = Book("Bookname", 2000, ["Charles","Bonnie"], "Charles@gmail.com", "M", 10)
+        return [author1,author2]
+
+
+author1 = ("Au","mail","M")
+author2 = ("Ae","Bmail","M")
+TestBook = Book("Bookname", 2000, 10, [author1,author2])
 print(TestBook.__str__())
