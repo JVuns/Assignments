@@ -19,7 +19,7 @@ class Author():
         return self.__gender
 
     def __str__(self):
-        return(f"Author[name{self.__name},email={self.__email},gender={self.__gender}]")
+        return(f"Author[name= {self.__name},email= {self.__email},gender= {self.__gender}]")
     
 class Book(Author):
     def __init__(self, aBook, price, qty=0, author=[] ):
@@ -47,12 +47,11 @@ class Book(Author):
         self.__qty = qty
 
     def __str__(self,):
-        return(f"Book[name={self.__name},Author{self.getAuthorNames()},price={self.getPrice()},qty={self.getQty()}]")
+        return(f"Book[name={self.__name},Authors={self.getAuthorNames()},price={self.getPrice()},qty={self.getQty()}]")
     def getAuthorNames(self):
-        return [author1,author2]
+        return [author1.__str__(),author2.__str__()]
 
-
-author1 = ("Au","mail","M")
-author2 = ("Ae","Bmail","M")
+author1 = Author("Au","mail","M")
+author2 = Author("Ae","Bmail","M")
 TestBook = Book("Bookname", 2000, 10, [author1,author2])
 print(TestBook.__str__())
