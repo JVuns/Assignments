@@ -47,7 +47,7 @@ class Book(Author):
         self.__qty = qty
 
     def __str__(self,):
-        return(f"Book[name={self.__name},Author[{self.getAuthorNames()}],price={self.getPrice()},qty={self.getQty()}]")
+        return(f"Book[name={self.__name},Author{self.getAuthorNames()},price={self.getPrice()},qty={self.getQty()}]")
     def getAuthorNames(self):
         return [author1,author2]
 
