@@ -5,6 +5,8 @@ class Author():
         self.__gender = gender
         if self.__gender not in ['M', 'F']:
             raise ValueError(gender)
+        if "@gmail.com" not in self.__email:
+            raise ValueError(email) 
 
     def getName(self):
         return self.__name
@@ -51,7 +53,7 @@ class Book(Author):
     def getAuthorNames(self):
         return [author1.__str__(),author2.__str__()]
 
-author1 = Author("Au","mail","M")
-author2 = Author("Ae","Bmail","M")
+author1 = Author("Au","@gmail.com","M")
+author2 = Author("Ae","B@gmail.com","M")
 TestBook = Book("Bookname", 2000, 10, [author1,author2])
 print(TestBook.__str__())
